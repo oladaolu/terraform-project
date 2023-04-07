@@ -1,6 +1,6 @@
 # EC2 Instance
 resource "aws_instance" "myec2" {
-  ami = data.aws_ami.amzlinux2.id
+  ami = data.aws_ami.amazonlinux2.id
   #instance_type = var.instance_type
   instance_type = var.instance_type_list[0]  # For List
   #instance_type = var.instance_type_map["dev"]  # For Map

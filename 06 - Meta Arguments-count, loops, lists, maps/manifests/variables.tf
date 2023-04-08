@@ -17,7 +17,7 @@ variable "instance_type" {
 variable "instance_keypair" {
   description = "AWS EC2 Key Pair that need to be associated with EC2 Instance"
   type = string
-  default = "Automationkey"
+  default = "EC2 Private Project"
 }
 
 # AWS EC2 Instance Type - List
@@ -36,4 +36,20 @@ variable "instance_type_map" {
     "qa" = "t3.small"
     "prod" = "t3.large"
   }
+}
+
+variable "instance_type_list" {
+  description = "EC2 Instance Type"
+  type = list(string)
+  default = ["t2.micro", "t2.medium", "t3.large"]
+}
+
+variable "ingressrules" {
+    type = list(number)
+    default = [80,443,8080,22]
+}
+
+variable "egressrules" {
+    type = list(number)
+    default = [80,443,25,3306,53,8080]
 }
